@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+	<div><h1>Crystal Collector</h1></div>
+	
+	<div class="instruction">
+		<ol>
+			<h2>Instructions</h2>
+			<li>You will be given a random number at the start of the game.</li>
+			<li>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</li>
+			<li>You win the game matching your total score to random number, you lose the game if your total score goes above the randon number.</li>
+			<li>The value of each crystal is hidden from you untill you click on it.</li> 
+			<li>Each time when the game starts, the game will change the value of each crystal.</li>
+		</ul>
+	</div>
+
+	<div class="randomScore">
+		<div id="random">#random<br>Randon number</div>
+		<div id="score">#score<br>Win<br>Lose</div>
+	</div>
+
+	<div id="crystals" class="crystalsDisplay">
+		<img id="amberCrystal" src="assets/images/amberCrystal.png">
+		<img id="blueCrystal" src="assets/images/blueCrystal.png">
+		<img id="greenCrystal" src="assets/images/greenCrystal.png">
+		<img id="redCrystal" src="assets/images/redCrystal.png">
+	</div>
+
+	<div id="total-score">#total-score<br>Total Score</div>
+
+	<footer>
+		<p>Copyright &copy; 2017 Radhika Sivarajan</p>
+	</footer>
+
+	<script src="assets/javascript/game.js"></script>
+</body>
+</html>
