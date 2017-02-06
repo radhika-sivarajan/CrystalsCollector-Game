@@ -26,10 +26,16 @@ $(document).ready(function() {
 		totalScore=0;
 		$("#total-score").html(totalScore);
 
-		//Generating values for each crystal between 1 and 12 and assigning to it
+		//Generating unique values for each crystal between 1 and 12 and assigning to it
 		var crystalValues = [];
-		for(var i=0; i<4; i++){
-			crystalValues[i] = Math.floor(Math.random() * 12) + 1;
+		while(crystalValues.length<4){
+			var random = Math.floor(Math.random() * 12) + 1;
+
+			//Avoid duplicate value for crystals
+			if(crystalValues.indexOf(random) > -1) 
+				continue;
+
+    		crystalValues[crystalValues.length] = random;
 		}
 		$("#amberCrystal").attr("value", crystalValues[0]);
 	    $("#blueCrystal").attr("value", crystalValues[1]);
