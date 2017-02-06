@@ -62,19 +62,18 @@ ol li:before {
 }
 
 img {
-	padding: 3px;
-	background: url("../images/glitter2.gif") center;
-	background-size: cover;
-	margin-right: 5px;
-	-moz-transition: all .3s ease-out;
- 	-webkit-transition: all .3s ease-out; 
-	transition: all .3s ease-out; 
+	margin-right: 10px;
+	-moz-transition: all .2s ease-out;
+ 	-webkit-transition: all .2s ease-out; 
+	transition: all .2s ease-out; 
+	filter: drop-shadow(5px 5px 5px #222);
 }
 
 img:hover { 
-  -moz-transform: scale(1.3);
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3); 
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2); 
+  filter: drop-shadow(5px 5px 5px yellow);
 }
 
 .randomScore {
@@ -99,12 +98,14 @@ img:hover {
 	float: left; 
 	font-family: Impact, Charcoal, sans-serif;
 	font-size: 25px;
+	color: #1a5a09;
 }
 
 #score { 
 	float: right; 
 	font-family: Arial Black, Gadget, sans-serif;
     font-size: 15px;
+    color: #0a0aa2;
 	text-shadow: 4px 4px 6px rgba(0,0,0,0.5) ;
 }
 
@@ -116,10 +117,10 @@ img:hover {
 	width: 50%;
 	font-family: Impact, Charcoal, sans-serif;
 	font-size: 25px;
-	color: red;
+	color: #b50505;
 }
 
 footer {
 	text-align: center;
-	color: darkolivegreen;
+	color: #472a22;
 }
