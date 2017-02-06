@@ -17,21 +17,24 @@ $(document).ready(function() {
 
 	//Start game
 	function startGame(){
+
+		//Generating random number between 19 and 120 and displaying
 		randomNumber = Math.floor(Math.random() * 102) + 19;
 		$("#random").html(randomNumber);
 
+		//Setting user score to to zero
 		totalScore=0;
 		$("#total-score").html(totalScore);
 
-		amberCrystalNum = Math.floor(Math.random() * 12) + 1;
-		blueCrystalNum = Math.floor(Math.random() * 12) + 1;
-		greenCrystalNum = Math.floor(Math.random() * 12) + 1;
-		redCrystalNum = Math.floor(Math.random() * 12) + 1;
-
-		$("#amberCrystal").attr("value", amberCrystalNum);
-	    $("#blueCrystal").attr("value", blueCrystalNum);
-	    $("#greenCrystal").attr("value", greenCrystalNum);
-	    $("#redCrystal").attr("value", redCrystalNum);
+		//Generating values for each crystal between 1 and 12 and assigning to it
+		var crystalValues = [];
+		for(var i=0; i<4; i++){
+			crystalValues[i] = Math.floor(Math.random() * 12) + 1;
+		}
+		$("#amberCrystal").attr("value", crystalValues[0]);
+	    $("#blueCrystal").attr("value", crystalValues[1]);
+	    $("#greenCrystal").attr("value", crystalValues[2]);
+	    $("#redCrystal").attr("value", crystalValues[3]);
 	}
 
     startGame();
@@ -43,7 +46,7 @@ $(document).ready(function() {
     	totalScore = totalScore + parseInt($(this).attr("value"));
     	$("#total-score").html(totalScore);
 
-    	//If total score equal random number
+    	//If user total score equal random number - "WON"
     	if(totalScore === randomNumber){
     		win++;
     		message = "You won !!";
@@ -52,7 +55,7 @@ $(document).ready(function() {
     		startGame();
     	}
 
-    	//If total score is greater than random number
+    	//If tuser otal score is greater than random number - "LOST"
     	if(totalScore > randomNumber){
     		loss++;
     		message = "You lost !!";
