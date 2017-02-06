@@ -80,7 +80,7 @@ img:hover {
 	overflow: auto;
 }
 
-#random, #score, #total-score {
+#random, #score, .total {
 	width:40%;
 	padding: 20px;
 	text-align: center;
@@ -113,10 +113,13 @@ img:hover {
 	text-align: center;
 }
 
-#total-score {
+.total {
 	width: 50%;
 	font-family: Impact, Charcoal, sans-serif;
-	font-size: 25px;
+	font-size: 20px;
+}
+
+#total-score {
 	color: #b50505;
 }
 
