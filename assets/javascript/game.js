@@ -11,8 +11,23 @@ $(document).ready(function() {
 
 	//Updating score board with win, loss count
 	function updateScore(winCount, lossCount, comment){
-		var scores = comment + "<br>Win : " + winCount + "<br>Loss : " + lossCount ;
-		$("#score").html(scores);
+
+		var newElement = $("<span>" + comment + "</span>");
+		var scores = "<br><br>Win : " + winCount + "<br>Loss : " + lossCount ;
+
+		newElement.css({
+			color : "#63350f", 
+			fontFamily: "Impact, Charcoal, sans-serif", 
+			fontSize : "20px", 
+			textShadow : "none",
+			padding : "7px",
+			background : "url(assets/images/glitter1.gif) center",
+			backgroundSize: "cover",
+			boxShadow: "0 0 19px 4px #e19d0f"
+		});
+		
+		$("#score").html(scores);	
+		$("#score").prepend(newElement);	
 	}
 
 	//Start game
@@ -55,7 +70,7 @@ $(document).ready(function() {
     	//If user total score equal random number - "WON"
     	if(totalScore === randomNumber){
     		win++;
-    		message = "You won !!";
+    		message = "You won !";
     		updateScore(win, loss, message);
     		alert("WON !!");
     		startGame();
@@ -64,7 +79,7 @@ $(document).ready(function() {
     	//If tuser otal score is greater than random number - "LOST"
     	if(totalScore > randomNumber){
     		loss++;
-    		message = "You lost !!";
+    		message = "You lost !";
     		updateScore(win, loss, message);
     		alert("LOST !!");
     		startGame();
