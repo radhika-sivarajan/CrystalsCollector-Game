@@ -21,9 +21,9 @@ $(document).ready(function() {
 			fontSize : "20px", 
 			textShadow : "none",
 			padding : "7px",
-			background : "url(assets/images/glitter1.gif) center",
+			background : "url(assets/images/glitter2.gif)",
 			backgroundSize: "cover",
-			boxShadow: "0 0 19px 4px #e19d0f"
+			boxShadow: "0 0 19px 4px #deb02c"
 		});
 		
 		$("#score").html(scores);	
