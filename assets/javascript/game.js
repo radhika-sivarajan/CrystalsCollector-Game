@@ -23,6 +23,7 @@ $(document).ready(function() {
 			padding : "7px",
 			background : "url(assets/images/glitter2.gif)",
 			backgroundSize: "cover",
+			borderRadius: "30px",
 			boxShadow: "0 0 19px 4px #deb02c"
 		});
 		
