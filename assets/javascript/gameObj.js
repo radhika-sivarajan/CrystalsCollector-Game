@@ -87,8 +87,7 @@ var game = {
 			alert("LOST !!");
 			this.startGame();
 		}
-	}
-	
+	}	
 };
 
 $(document).ready(function() {
@@ -103,8 +102,6 @@ $(document).ready(function() {
     	game.totalScore = game.totalScore + parseInt($(this).attr("value"));
     	$("#total-score").html(game.totalScore);
 
-    	game.setScore();
-    	
+    	game.setScore();    	
     });
-
 });
