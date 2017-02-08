@@ -30,8 +30,8 @@ var game = {
 			//Avoid duplicate values of crystals.
 			if(this.crystalValues.indexOf(this.randomCrystal) > -1) 
 				continue;
-
-    		this.crystalValues[this.crystalValues.length] = this.randomCrystal;
+			
+			this.crystalValues[this.crystalValues.length] = this.randomCrystal;
 		}
 
 		//Setting values to each crystals.
