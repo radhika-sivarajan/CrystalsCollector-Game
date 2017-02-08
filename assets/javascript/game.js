@@ -4,10 +4,6 @@ $(document).ready(function() {
 	var loss = 0;
 	var randomNumber;
 	var totalScore;
-	var amberCrystalNum;
-	var blueCrystalNum;
-	var greenCrystalNum;
-	var redCrystalNum;
 
 	//Updating score board with win, loss count
 	function updateScore(winCount, lossCount, comment){
