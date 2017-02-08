@@ -9,7 +9,8 @@ var game = {
 	crystalValues: [],
 	message: null,
 
-	//Game start/restart. Generating random number, setting total score.
+	// Game start/restart. 
+	// Generating random number and setting total score.
 	startGame: function(){
 		this.totalScore = 0;
 		this.randomNumber = Math.floor(Math.random() * 102) + 19;
@@ -20,13 +21,13 @@ var game = {
 		$("#total-score").html(this.totalScore);
 	},
 
-	// Generating unique values for crystal.
+	// Generating unique values for each crystal.
 	setCrystalValues: function(){
 
 		for(var i=0; this.crystalValues.length<4; i++){
 			this.randomCrystal = Math.floor(Math.random() * 12) + 1;
 
-			//Avoid duplicate value for crystals.
+			//Avoid duplicate values of crystals.
 			if(this.crystalValues.indexOf(this.randomCrystal) > -1) 
 				continue;
 
@@ -39,12 +40,12 @@ var game = {
 		$("#greenCrystal").attr("value", this.crystalValues[2]);
 		$("#redCrystal").attr("value", this.crystalValues[3]);
 
-		//Clearing the array for crystal values
+		//Clearing the array of crystal values
 		this.crystalValues.splice(0,this.crystalValues.length);
 
 	},
 
-	// Updating score board with win/loss message, win count and loss count
+	// Updating score board with win/loss message, win count and loss count.
 	updateScore: function(){
 
 		var newElement = $("<span>" + this.message + "</span>");
@@ -71,21 +72,21 @@ var game = {
 
 		//If user total score equal random number - "WON"
 		if(this.totalScore === this.randomNumber){
-	    		this.win++;
-	    		this.message = "You won !";
-	    		this.updateScore();
-	    		alert("WON !!");
-	    		this.startGame();
-    	}
+			this.win++;
+			this.message = "You won !";
+			this.updateScore();
+			alert("WON !!");
+			this.startGame();
+		}
 
-    	//If user total score is greater than random number - "LOST"
-    	if(this.totalScore > this.randomNumber){
-    		this.loss++;
-    		this.message = "You lost !";
-    		this.updateScore(this.win, this.loss, this.message);
-    		alert("LOST !!");
-    		this.startGame();
-    	}
+		//If user total score is greater than random number - "LOST"
+		if(this.totalScore > this.randomNumber){
+			this.loss++;
+			this.message = "You lost !";
+			this.updateScore();
+			alert("LOST !!");
+			this.startGame();
+		}
 	}
 	
 };
