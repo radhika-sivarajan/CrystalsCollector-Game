@@ -48,21 +48,10 @@ var game = {
 	// Updating score board with win/loss message, win count and loss count.
 	updateScore: function(){
 
-		var newElement = $("<span>" + this.message + "</span>");
+		var newElement = $("<span class='new-element'>" + this.message + "</span>");
 		var scores = "<br><br>Win : " + this.win + "<br>Loss : " + this.loss ;
-
-		newElement.css({
-			color : "#63350f", 
-			fontFamily: "Impact, Charcoal, sans-serif", 
-			fontSize : "20px", 
-			textShadow : "none",
-			padding : "7px",
-			background : "url(assets/images/glitter2.gif)",
-			backgroundSize: "cover",
-			borderRadius: "30px",
-			boxShadow: "0 0 19px 4px #deb02c"
-		});
 		
+		//Display score and message
 		$("#score").html(scores);	
 		$("#score").prepend(newElement);	
 	},

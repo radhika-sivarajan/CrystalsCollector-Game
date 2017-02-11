@@ -124,6 +124,18 @@ img:hover {
 	color: #b50505;
 }
 
+.new-element {
+	color: #63350f; 
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 20px; 
+	text-shadow: none;
+	padding: 7px;
+	background: url(../images/glitter2.gif);
+	background-size: cover;
+	border-radius: 30px;
+	box-shadow: 0 0 19px 4px #deb02c;
+}
+
 footer {
 	text-align: center;
 	color: #472a22;
