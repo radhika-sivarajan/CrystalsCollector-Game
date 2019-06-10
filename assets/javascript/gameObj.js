@@ -1,10 +1,9 @@
 
 var game = {
-	win: 0,
-	loss: 0,
-	randomNumber: null,
-	randomCrystal: null,
-	totalScore: null,
+	noOfWins: 0,
+	noOfLoss: 0,
+	randomNumber: 0,
+	totalScore: 0,
 	crystalValues: [],
 	message: null,
 
@@ -22,14 +21,15 @@ var game = {
 
 	// Generating unique values for each crystal.
 	setCrystalValues: function () {
+		var randomCrystal = 0;
 		for (var i = 0; this.crystalValues.length < 4; i++) {
-			this.randomCrystal = Math.floor(Math.random() * 12) + 1;
+			randomCrystal = Math.floor(Math.random() * 12) + 1;
 
 			//Avoid duplicate values of crystals.
-			if (this.crystalValues.indexOf(this.randomCrystal) > -1)
+			if (this.crystalValues.indexOf(randomCrystal) > -1)
 				continue;
 
-			this.crystalValues[this.crystalValues.length] = this.randomCrystal;
+			this.crystalValues[this.crystalValues.length] = randomCrystal;
 		}
 
 		//Setting values to each crystals.
@@ -45,7 +45,7 @@ var game = {
 	// Updating score board with win/loss message, win count and loss count.
 	updateScore: function () {
 		var newElement = $("<span class='new-element'>" + this.message + "</span>");
-		var scores = "<br><br>Win : " + this.win + "<br>Loss : " + this.loss;
+		var scores = "<br><br>Win : " + this.noOfWins + "<br>Loss : " + this.noOfLoss;
 
 		//Display score and message
 		$("#score").html(scores);
@@ -56,7 +56,7 @@ var game = {
 	setScore: function () {
 		//If user total score equal random number - "WON"
 		if (this.totalScore === this.randomNumber) {
-			this.win++;
+			this.noOfWins++;
 			this.message = "You won !";
 			this.updateScore();
 			alert("WON !!");
@@ -65,7 +65,7 @@ var game = {
 
 		//If user total score is greater than random number - "LOST"
 		if (this.totalScore > this.randomNumber) {
-			this.loss++;
+			this.noOfLoss++;
 			this.message = "You lost !";
 			this.updateScore();
 			alert("LOST !!");
